@@ -1,0 +1,126 @@
+{
+  "app": {
+    "kicker": "Lichess Þrautaþjálfari",
+    "loadingAppDataPath": "Hleð slóð að forritsgögnum..."
+  },
+  "screens": {
+    "import": {
+      "title": "Safn",
+      "copy": "Staðbundin þrautaskrá"
+    },
+    "sessionSetup": {
+      "title": "Lota",
+      "copy": "Stillingar biðraðar"
+    },
+    "solve": {
+      "title": "Borð",
+      "copy": "Núverandi þraut"
+    }
+  },
+  "status": {
+    "activeSession": "Virk lota",
+    "usingBundledPreviewPuzzle": "Nota meðfylgjandi prufuþraut.",
+    "browserPreviewFallback": "Tauri bakendi ekki tiltækur í vafraforskoðun.",
+    "datasetUnavailable": "Þrautaskrá ekki tiltæk. Nota meðfylgjandi prufuþraut.",
+    "previewPuzzle": "Prufuþraut",
+    "loadedPuzzle": "Þraut {id} hlaðin",
+    "solved": "Leyst",
+    "failed": "Mistókst",
+    "skipped": "Sleppt",
+    "inProgress": "Í gangi"
+  },
+  "messages": {
+    "startPuzzle": "Fyrsti leikurinn er sýndur. Finndu besta svarið. Rangur leikur fellir þrautina strax.",
+    "skipPuzzle": "Sleppt. Þessi þraut er merkt lokið í núverandi lotu.",
+    "failedMove": "Mistókst á {attemptedMove}. Búist var við {expectedMove}.",
+    "solved": "Leyst. Tilbúið í næstu þraut.",
+    "correctMove": "Rétt. Svar andstæðingsins var leikið sjálfkrafa."
+  },
+  "buttons": {
+    "resetPuzzle": "Endurstilla þraut",
+    "nextPuzzle": "Næsta þraut (N)",
+    "retryPuzzle": "Reyna aftur",
+    "restartPuzzle": "Byrja upp á nýtt",
+    "skipPuzzle": "Sleppa þraut",
+    "continueToSession": "Áfram í lotu",
+    "startSolving": "Hefja lausn",
+    "openLibrary": "Opna safn",
+    "openSession": "Opna lotu",
+    "showSidebar": "Sýna hliðarspjald",
+    "hideSidebar": "Fela hliðarspjald"
+  },
+  "accessibility": {
+    "primaryScreens": "Aðalskjáir"
+  },
+  "headings": {
+    "library": "Safn",
+    "sessionSetup": "Lotustillingar",
+    "solution": "Lausn",
+    "puzzle": "Þraut {id}"
+  },
+  "copy": {
+    "libraryIntro": "Staðbundna safnið þitt helst á þessari tölvu og heldur áfram úr sama ástandi.",
+    "sessionSetupIntro": "Stilltu afmarkaða biðröð og haltu þig í sömu lotu þar til þú ákveður að byrja upp á nýtt."
+  },
+  "labels": {
+    "rating": "Stig {rating}",
+    "whiteToMove": "Hvítur á leik",
+    "blackToMove": "Svartur á leik",
+    "dataset": "Þrautaskrá",
+    "storage": "Geymsla",
+    "status": "Staða",
+    "progress": "Framvinda",
+    "autosavedOnDevice": "Vistað sjálfkrafa á þessu tæki.",
+    "ratingFilter": "Stigabil",
+    "themes": "Þemu",
+    "opening": "Byrjun",
+    "order": "Röð",
+    "randomizedOncePerSession": "Slembiraðað einu sinni fyrir hverja lotu.",
+    "solved": "Leyst",
+    "failed": "Mistókst",
+    "skipped": "Sleppt",
+    "current": "Núverandi",
+    "completion": "Lokið",
+    "openingUnspecified": "Ótilgreint",
+    "queue": "Biðröð",
+    "randomized": "Slembiraðað",
+    "saveMode": "Vistunarhamur",
+    "automatic": "Sjálfvirkt",
+    "minRating": "Lágmarksstig",
+    "maxRating": "Hámarksstig",
+    "category": "Flokkur",
+    "game": "Tegund",
+    "language": "Tungumál",
+    "selectedThemes": "Valin þemu",
+    "selectCategoryFirst": "Veldu flokk fyrst",
+    "allThemes": "Öll þemu",
+    "searchThemes": "Leita að þemum",
+    "noMatchingThemes": "Engin þemu passa við leitina"
+  },
+  "shortcuts": {
+    "screens": "skjáir",
+    "moveFocus": "færa fókus",
+    "selectOrMove": "velja eða leika",
+    "nextPuzzle": "næsta þraut",
+    "reset": "endurstilla",
+    "skip": "sleppa",
+    "clear": "hreinsa"
+  },
+  "cards": {
+    "datasetFile": "lichess_db_puzzle.csv.zst"
+  },
+  "filterPreview": {
+    "rating": "1500-1900",
+    "themes": "mate, middlegame",
+    "opening": "Italian_Game"
+  },
+  "sessionOptions": {
+    "games": [
+      "Italian_Game",
+      "Sicilian_Defense",
+      "French_Defense",
+      "Queens_Gambit"
+    ],
+    "themes": ["mate", "middlegame", "fork", "pin", "endgame", "sacrifice"]
+  }
+}

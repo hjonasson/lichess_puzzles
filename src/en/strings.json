@@ -1,0 +1,126 @@
+{
+  "app": {
+    "kicker": "Lichess Puzzle trainer",
+    "loadingAppDataPath": "Loading app data path..."
+  },
+  "screens": {
+    "import": {
+      "title": "Library",
+      "copy": "Local puzzle file"
+    },
+    "sessionSetup": {
+      "title": "Session",
+      "copy": "Queue settings"
+    },
+    "solve": {
+      "title": "Board",
+      "copy": "Current puzzle"
+    }
+  },
+  "status": {
+    "activeSession": "Active session",
+    "usingBundledPreviewPuzzle": "Using bundled preview puzzle.",
+    "browserPreviewFallback": "Tauri backend not available in browser preview.",
+    "datasetUnavailable": "Puzzle file unavailable. Using bundled preview puzzle.",
+    "previewPuzzle": "Preview puzzle",
+    "loadedPuzzle": "Puzzle {id} loaded",
+    "solved": "Solved",
+    "failed": "Failed",
+    "skipped": "Skipped",
+    "inProgress": "In progress"
+  },
+  "messages": {
+    "startPuzzle": "The first move is shown for you. Find the best reply. A wrong move fails immediately.",
+    "skipPuzzle": "Skipped. This puzzle is marked done for the current session.",
+    "failedMove": "Failed on {attemptedMove}. Expected {expectedMove}.",
+    "solved": "Solved. Ready for the next puzzle.",
+    "correctMove": "Correct. The opponent reply was played automatically."
+  },
+  "buttons": {
+    "resetPuzzle": "Reset puzzle",
+    "nextPuzzle": "Next puzzle (N)",
+    "retryPuzzle": "Retry puzzle",
+    "restartPuzzle": "Restart puzzle",
+    "skipPuzzle": "Skip puzzle",
+    "continueToSession": "Continue to session",
+    "startSolving": "Start solving",
+    "openLibrary": "Open library",
+    "openSession": "Open session",
+    "showSidebar": "Show sidebar",
+    "hideSidebar": "Hide sidebar"
+  },
+  "accessibility": {
+    "primaryScreens": "Primary screens"
+  },
+  "headings": {
+    "library": "Library",
+    "sessionSetup": "Session setup",
+    "solution": "Solution",
+    "puzzle": "Puzzle {id}"
+  },
+  "copy": {
+    "libraryIntro": "Your desktop library stays local and resumes from the same machine state.",
+    "sessionSetupIntro": "Use a focused queue and stay in the same session until you decide to start over."
+  },
+  "labels": {
+    "rating": "Rating {rating}",
+    "whiteToMove": "White to move",
+    "blackToMove": "Black to move",
+    "dataset": "Puzzle file",
+    "storage": "Storage",
+    "status": "Status",
+    "progress": "Progress",
+    "autosavedOnDevice": "Autosaved on this device.",
+    "ratingFilter": "Rating",
+    "themes": "Themes",
+    "opening": "Opening",
+    "order": "Order",
+    "randomizedOncePerSession": "Randomized once per session.",
+    "solved": "Solved",
+    "failed": "Failed",
+    "skipped": "Skipped",
+    "current": "Current",
+    "completion": "Completion",
+    "openingUnspecified": "Unspecified",
+    "queue": "Queue",
+    "randomized": "Randomized",
+    "saveMode": "Save mode",
+    "automatic": "Automatic",
+    "minRating": "Min rating",
+    "maxRating": "Max rating",
+    "category": "Category",
+    "game": "Game",
+    "language": "Language",
+    "selectedThemes": "Selected themes",
+    "selectCategoryFirst": "Select a category first",
+    "allThemes": "All themes",
+    "searchThemes": "Search themes",
+    "noMatchingThemes": "No themes match that search"
+  },
+  "shortcuts": {
+    "screens": "screens",
+    "moveFocus": "move focus",
+    "selectOrMove": "select or move",
+    "nextPuzzle": "next puzzle",
+    "reset": "reset",
+    "skip": "skip",
+    "clear": "clear"
+  },
+  "cards": {
+    "datasetFile": "lichess_db_puzzle.csv.zst"
+  },
+  "filterPreview": {
+    "rating": "1500-1900",
+    "themes": "mate, middlegame",
+    "opening": "Italian_Game"
+  },
+  "sessionOptions": {
+    "games": [
+      "Italian_Game",
+      "Sicilian_Defense",
+      "French_Defense",
+      "Queens_Gambit"
+    ],
+    "themes": ["mate", "middlegame", "fork", "pin", "endgame", "sacrifice"]
+  }
+}

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="160" y1="112" x2="864" y2="912" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#23352D"/>
+      <stop offset="1" stop-color="#16211D"/>
+    </linearGradient>
+    <linearGradient id="board" x1="248" y1="216" x2="776" y2="808" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30463C"/>
+      <stop offset="1" stop-color="#22312B"/>
+    </linearGradient>
+    <linearGradient id="trail" x1="320" y1="720" x2="720" y2="336" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F6E6C8"/>
+      <stop offset="1" stop-color="#F4C869"/>
+    </linearGradient>
+    <filter id="shadow" x="124" y="164" width="776" height="728" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="20"/>
+      <feGaussianBlur stdDeviation="24"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.28 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect x="56" y="56" width="912" height="912" rx="220" fill="url(#bg)"/>
+  <rect x="56" y="56" width="912" height="912" rx="220" stroke="rgba(255,248,231,0.10)" stroke-width="8"/>
+
+  <g filter="url(#shadow)">
+    <rect x="196" y="196" width="632" height="632" rx="116" fill="url(#board)"/>
+    <rect x="196" y="196" width="632" height="632" rx="116" stroke="#4C6658" stroke-width="12"/>
+
+    <rect x="246" y="246" width="266" height="266" rx="36" fill="#3C5649"/>
+    <rect x="512" y="246" width="266" height="266" rx="36" fill="#273A32"/>
+    <rect x="246" y="512" width="266" height="266" rx="36" fill="#273A32"/>
+    <rect x="512" y="512" width="266" height="266" rx="36" fill="#3C5649"/>
+
+    <path d="M332 690V454C332 426.386 354.386 404 382 404H602" stroke="url(#trail)" stroke-width="88" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="332" cy="690" r="80" fill="#F6E6C8"/>
+    <circle cx="332" cy="690" r="34" fill="#23352D"/>
+
+    <circle cx="602" cy="404" r="92" fill="#F4C869"/>
+    <circle cx="602" cy="404" r="48" fill="#23352D"/>
+    <circle cx="602" cy="404" r="18" fill="#F4C869"/>
+  </g>
+</svg>
