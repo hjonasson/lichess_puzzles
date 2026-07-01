@@ -130,15 +130,24 @@ const DATASET_FILE_NAMES: [&str; 2] = [
 ];
 
 fn resolve_dataset_path(app: &tauri::AppHandle) -> Option<PathBuf> {
-    let current_dir = std::env::current_dir().ok()?;
-    let app_data_dir = app.path().app_data_dir().ok()?;
+    let current_dir = std::env::current_dir().ok();
+    let resource_dir = app.path().resource_dir().ok();
+    let app_data_dir = app.path().app_data_dir().ok();
 
     DATASET_FILE_NAMES.iter().find_map(|file_name| {
-        [
-            PathBuf::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../")).join(file_name),
-            current_dir.join(file_name),
-            app_data_dir.join(file_name),
-        ]
+        let mut candidate_paths = vec![PathBuf::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../")).join(file_name)];
+
+        if let Some(current_dir) = &current_dir {
+            candidate_paths.push(current_dir.join(file_name));
+        }
+        if let Some(resource_dir) = &resource_dir {
+            candidate_paths.push(resource_dir.join(file_name));
+        }
+        if let Some(app_data_dir) = &app_data_dir {
+            candidate_paths.push(app_data_dir.join(file_name));
+        }
+
+        candidate_paths
         .into_iter()
         .find(|path| path.exists() && path.is_file())
     })
