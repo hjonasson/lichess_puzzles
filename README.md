@@ -9,6 +9,7 @@ The large Lichess puzzle dataset is not intended to live in this Git repository.
 - Download `lichess_db_puzzle.csv.zst` from https://database.lichess.org/lichess_db_puzzle.csv.zst
 - Place it at the repository root next to `package.json`
 - The app will look for that file locally at runtime
+- If `lichess_db_puzzle_top_10000.csv.zst` is also present, the app will prefer that smaller dataset automatically
 
 This keeps the repository small enough for normal GitHub hosting.
 
@@ -35,7 +36,7 @@ bun run tauri:build
 
 ## Current behavior
 
-- Loads puzzles directly from `lichess_db_puzzle.csv.zst`; there is no import step and no SQLite database.
+- Loads puzzles directly from a local `.zst` dataset; there is no import step and no SQLite database.
 - Uses the Rust backend to derive session filters and load puzzles from the compressed dataset.
 - Supports filtering by rating range, opening, and multiple themes.
 - Shows the opponent's first move automatically, then asks the user to solve the continuation.

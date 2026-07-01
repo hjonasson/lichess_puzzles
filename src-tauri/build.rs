@@ -5,6 +5,11 @@ use std::path::{Path, PathBuf};
 use std::time::UNIX_EPOCH;
 use zstd::stream::read::Decoder;
 
+const DATASET_FILE_NAMES: [&str; 2] = [
+  "lichess_db_puzzle_top_10000.csv.zst",
+  "lichess_db_puzzle.csv.zst",
+];
+
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 struct SessionGameOption {
@@ -211,9 +216,18 @@ fn generate_filter_catalog(dataset_path: &Path) -> Result<GeneratedFilterCatalog
 
 fn main() {
   let manifest_dir = PathBuf::from(std::env::var("CARGO_MANIFEST_DIR").expect("missing manifest dir"));
-  let dataset_path = manifest_dir.join("../lichess_db_puzzle.csv.zst");
+  let dataset_root = manifest_dir.join("..");
 
-  println!("cargo:rerun-if-changed={}", dataset_path.display());
+  for file_name in DATASET_FILE_NAMES {
+    println!("cargo:rerun-if-changed={}", dataset_root.join(file_name).display());
+  }
+
+  let dataset_path = DATASET_FILE_NAMES
+    .iter()
+    .map(|file_name| dataset_root.join(file_name))
+    .find(|path| path.exists() && path.is_file())
+    .unwrap_or_else(|| dataset_root.join("lichess_db_puzzle.csv.zst"));
+
   println!("cargo:rerun-if-changed=build.rs");
 
   let out_dir = PathBuf::from(std::env::var("OUT_DIR").expect("missing out dir"));

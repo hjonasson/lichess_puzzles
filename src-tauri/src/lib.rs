@@ -124,24 +124,24 @@ struct AppState {
     filtered_puzzle_cache: Mutex<Option<FilteredPuzzleCache>>,
 }
 
-fn resolve_dataset_path(app: &tauri::AppHandle) -> Option<PathBuf> {
-    let candidate_paths = [
-        PathBuf::from(concat!(
-            env!("CARGO_MANIFEST_DIR"),
-            "/../lichess_db_puzzle.csv.zst"
-        )),
-        std::env::current_dir()
-            .ok()?
-            .join("lichess_db_puzzle.csv.zst"),
-        app.path()
-            .app_data_dir()
-            .ok()?
-            .join("lichess_db_puzzle.csv.zst"),
-    ];
+const DATASET_FILE_NAMES: [&str; 2] = [
+    "lichess_db_puzzle_top_10000.csv.zst",
+    "lichess_db_puzzle.csv.zst",
+];
 
-    candidate_paths
+fn resolve_dataset_path(app: &tauri::AppHandle) -> Option<PathBuf> {
+    let current_dir = std::env::current_dir().ok()?;
+    let app_data_dir = app.path().app_data_dir().ok()?;
+
+    DATASET_FILE_NAMES.iter().find_map(|file_name| {
+        [
+            PathBuf::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../")).join(file_name),
+            current_dir.join(file_name),
+            app_data_dir.join(file_name),
+        ]
         .into_iter()
         .find(|path| path.exists() && path.is_file())
+    })
 }
 
 fn resolve_dataset_source_info(app: &tauri::AppHandle) -> Result<DatasetSourceInfo, String> {
